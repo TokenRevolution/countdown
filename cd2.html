@@ -1,0 +1,339 @@
+<html lang="en" dir="ltr">
+   <html lang="en" dir="ltr">
+      <head>
+         <meta charset="utf-8">
+         <title>Circular Progress Bar | CodingNepal</title>
+         <link rel="stylesheet" href="style.css">
+      	<style>
+		@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+html,body{
+  display: grid;
+  height: 100%;
+  text-align: center;
+  place-items: center;
+  background: #dde6f0;
+}
+.circular{
+  height: 100px;
+  width: 100px;
+  position: relative;
+}
+.circular .inner, .circular .outer, .circular .circle{
+  position: absolute;
+  z-index: 6;
+  height: 100%;
+  width: 100%;
+  border-radius: 100%;
+  box-shadow: inset 0 1px 0 rgba(0,0,0,0.2);
+}
+.circular .inner{
+  top: 50%;
+  left: 50%;
+  height: 80px;
+  width: 80px;
+  margin: -40px 0 0 -40px;
+  background-color: #dde6f0;
+  border-radius: 100%;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+}
+.circular .circle{
+  z-index: 1;
+  box-shadow: none;
+}
+.circular .numb{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  font-size: 18px;
+  font-weight: 500;
+  color: #4158d0;
+}
+.circular .numb1{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  font-size: 18px;
+  font-weight: 500;
+  color: #4158d0;
+}
+
+.circular .numb2{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  font-size: 18px;
+  font-weight: 500;
+  color: #4158d0;
+}
+
+.circular .numb3{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  font-size: 18px;
+  font-weight: 500;
+  color: #4158d0;
+}
+
+.circular .bar{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  -webkit-border-radius: 100%;
+  clip: rect(0px, 100px, 100px, 50px);
+}
+.circle .bar .progress{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -webkit-border-radius: 100%;
+  clip: rect(0px, 50px, 100px, 0px);
+}
+.circle .bar .progress, .dot span{
+  background: #4158d0;
+}
+.circle .left .progress{
+  z-index: 1;
+  animation: left 60s linear both;
+}
+@keyframes left {
+  100%{
+    transform: rotate(180deg);
+  }
+}
+.circle .right{
+  z-index: 3;
+  transform: rotate(180deg);
+}
+.circle .right .progress{
+  animation: right 60s linear both;
+  animation-delay: 0s;
+}
+@keyframes right {
+  100%{
+    transform: rotate(180deg);
+  }
+}
+.circle .dot{
+  z-index: 2;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 50%;
+  height: 10px;
+  margin-top: -5px;
+  animation: dot 120s linear both;
+  transform-origin: 0% 50%;
+}
+.circle .dot span {
+  position: absolute;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+}
+@keyframes dot{
+  0% {
+    transform: rotate(-90deg);
+  }
+  50% {
+    transform: rotate(90deg);
+    z-index: 4;
+  }
+  100% {
+    transform: rotate(270deg);
+    z-index: 4;
+  }
+}
+ 	</style>
+       </head>
+      <body>
+         <div class="circular" style="margin-left: -500%;">
+            <div class="inner"></div>
+            <div class="outer"></div>
+            <div class="numb">
+
+            </div>
+            <div class="circle">
+               <div class="dot">
+                  <span></span>
+               </div>
+               <div class="bar left">
+                  <div class="progress"></div>
+               </div>
+               <div class="bar right">
+                  <div class="progress"></div>
+               </div>
+            </div>
+         </div>
+
+         <div class="circular" style="margin-top: -425%;margin-left: -250%;">
+            <div class="inner"></div>
+            <div class="outer"></div>
+            <div class="numb1">
+  
+            </div>
+            <div class="circle">
+               <div class="dot">
+                  <span></span>
+               </div>
+               <div class="bar left">
+                  <div class="progress"></div>
+               </div>
+               <div class="bar right">
+                  <div class="progress"></div>
+               </div>
+            </div>
+         </div>
+
+
+         <div class="circular" style="margin-top: -740%;">
+            <div class="inner"></div>
+            <div class="outer"></div>
+            <div class="numb2">
+     
+            </div>
+            <div class="circle">
+               <div class="dot">
+                  <span></span>
+               </div>
+               <div class="bar left">
+                  <div class="progress"></div>
+               </div>
+               <div class="bar right">
+                  <div class="progress"></div>
+               </div>
+            </div>
+         </div>
+
+
+         <div class="circular" style="margin-top: -1056%;margin-left: 250%;">
+            <div class="inner"></div>
+            <div class="outer"></div>
+            <div class="numb3">
+
+            </div>
+            <div class="circle">
+               <div class="dot">
+                  <span></span>
+               </div>
+               <div class="bar left">
+                  <div class="progress"></div>
+               </div>
+               <div class="bar right">
+                  <div class="progress"></div>
+               </div>
+            </div>
+         </div>
+
+
+	       <p id="days"></p>
+               <p id="hours"></p>
+               <p id="minutes"></p>
+               <p id="seconds"></p>
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Jan 5, 3100 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("days").innerHTML = days + ":" + "D"   
+  document.getElementById("hours").innerHTML = hours + ":" +  "h "
+  document.getElementById("minutes").innerHTML = minutes + ":" + "m " 
+  document.getElementById("seconds").innerHTML = seconds + ":" + "s ";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("days").innerHTML = "EX";
+    document.getElementById("hours").innerHTML = "PI";
+    document.getElementById("minutes").innerHTML = "RE";
+    document.getElementById("seconds").innerHTML = "D";	  
+  }
+}, 1000);
+
+            const numb = document.querySelector(".numb");
+	    const numb1 = document.querySelector(".numb1");
+            const numb2 = document.querySelector(".numb2");
+            const numb3 = document.querySelector(".numb3");
+            var countDownDate = new Date("Jan 5, 2023 15:37:25").getTime();  
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            let counter = days;
+            setInterval(()=>{
+              if (counter3 == 0){
+                clearInterval();
+              }else{
+                counter-=1;
+                numb.textContent = counter + "d";
+              }
+            }, 1000);
+
+            let counter1 = hours;
+            setInterval(()=>{
+              if(counter2 == 0 && counter3 == 0){
+                clearInterval();
+              }else{
+                counter1-=1;
+                numb1.textContent = counter1 + "h";
+              }
+            }, 1000);
+
+
+            let counter2 = minutes;
+            setInterval(()=>{
+              if(counter1 == 0 && counter2 == 0 && counter3 == 0){
+                clearInterval();
+              }else{
+                counter2-=1;
+                numb2.textContent = counter2 + "m";
+              }
+            }, 1000);
+
+
+            let counter3 = seconds;
+            setInterval(()=>{
+              if(counter == 0 && counter1 == 0 && counter2 == 0 && counter3 == 0){
+                clearInterval();
+              }else{
+                counter3-=1;
+                numb3.textContent = counter3 + "s";
+              }
+            }, 1000);
+</script>
+    </body>
+</html>
