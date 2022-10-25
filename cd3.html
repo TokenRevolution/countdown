@@ -127,7 +127,7 @@ html,body{
 }
 @keyframes right {
   100%{
-    transform: rotate(180deg);
+    transform: rotate(360deg);
   }
 }
 .circle .dot{
@@ -138,7 +138,7 @@ html,body{
   width: 50%;
   height: 10px;
   margin-top: -5px;
-  animation: dot 120s linear both;
+  animation: dot 5s linear both;
   transform-origin: 0% 50%;
 }
 .circle .dot span {
@@ -164,11 +164,11 @@ html,body{
  	</style>
        </head>
       <body>
-         <div class="circular" style="margin-left: -500%;">
+         <div class="circular">
             <div class="inner"></div>
             <div class="outer"></div>
             <div class="numb">
-		
+		<p id="days"></p>
             </div>
             <div class="circle">
                <div class="dot">
@@ -183,11 +183,12 @@ html,body{
             </div>
          </div>
 
-         <div class="circular" style="margin-top: -425%;margin-left: -250%;">
+
+         <div class="circular">
             <div class="inner"></div>
             <div class="outer"></div>
             <div class="numb1">
-
+		<p id="hours"></p>   
             </div>
             <div class="circle">
                <div class="dot">
@@ -203,11 +204,11 @@ html,body{
          </div>
 
 
-         <div class="circular" style="margin-top: -740%;">
+         <div class="circular">
             <div class="inner"></div>
             <div class="outer"></div>
             <div class="numb2">
-
+		<p id="minutes"></p> 
             </div>
             <div class="circle">
                <div class="dot">
@@ -223,11 +224,11 @@ html,body{
          </div>
 
 
-         <div class="circular" style="margin-top: -1056%;margin-left: 250%;">
+         <div class="circular">
             <div class="inner"></div>
             <div class="outer"></div>
             <div class="numb3">
-
+		<p id="seconds"></p> 
             </div>
             <div class="circle">
                <div class="dot">
@@ -242,15 +243,13 @@ html,body{
             </div>
          </div>
 
-<p id="days"></p>
-<p id="hours"></p>       
-<p id="minutes"></p> 
-<p id="seconds"></p>            
+    
+
+           
                
-              
 <script>
 // Set the date we're counting down to
-var countDownDate = new Date("Jan 5, 3100 15:37:25").getTime();
+var countDownDate = new Date("Jan 5, 2023 15:37:25").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -282,60 +281,6 @@ var x = setInterval(function() {
     document.getElementById("seconds").innerHTML = "D";	  
   }
 }, 1000);
-
-            const numb = document.querySelector(".numb");
-	    const numb1 = document.querySelector(".numb1");
-            const numb2 = document.querySelector(".numb2");
-            const numb3 = document.querySelector(".numb3");
-            var countDownDate = new Date("Jan 5, 2023 15:37:25").getTime();  
-            var now = new Date().getTime();
-            var distance = countDownDate - now;
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            let counter = days;
-            setInterval(()=>{
-              if (counter3 == 0){
-                clearInterval();
-              }else{
-                numb.textContent = counter + "d";
-              }
-            }, 86400000);
-
-            let counter1 = hours;
-            setInterval(()=>{
-              if(counter2 == 0 && counter3 == 0){
-                clearInterval();
-              }else{
-                numb1.textContent = counter1 + "h";
-              }
-            }, 3600000);
-
-
-            let counter2 = minutes;
-            setInterval(()=>{
-              if(counter1 == 0 && counter2 == 0 && counter3 == 0){
-                clearInterval();
-              }else{
-                counter2-=1
-                numb2.textContent = counter2 + "m";
-              }
-            }, 60000);
-
-
-            let counter3 = seconds;
-            setInterval(()=>{
-              if(counter == 0 && counter1 == 0 && counter2 == 0 && counter3 == 0){
-                clearInterval();
-              }else if (counter3 > 0){
-                counter3-=1
-                numb3.textContent = counter3 + "s";
-              }else{
-	        
-	      }
-            }, 1000);
 </script>
     </body>
 </html>
